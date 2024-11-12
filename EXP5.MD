@@ -1,59 +1,60 @@
-# Ex.No: 5 Binary Search.
-### DATE: 10-09-24                                                                       
-### REGISTER NUMBER : 212221040065
+# Ex.No: 6 To check whether the string is Palindrome and generate test cases.
 
+### DATE: 17-09-24                                                                       
+### REGISTER NUMBER :  212221040065
 ### AIM: 
-Write a python program for Binary Search and inspect for failures.
-
+Write a Python program to check whether the string is Palindrome and generate test cases. 
 ### Algorithm:
-1. Start the program. 
-2. Get the list from the user 
-3. Get the element to be searched 
-4. Compare the mid element with the key, if same return the index 
-5. If key is greater, search it in the right side, else search it in the left side. 
-6. If not found return -1 
-7. Stop the program.
-
+1. Start
+2. Get an input from the user by prompting 
+3. Run a loop form 0 to len/2.
+4. Check if the characters are the same both from the start and the end till len/2. 
+5. If it is, return the result that it is a palindrome.
+6. Else, return that it is not a palindrome. 
+7. Stop the program.
 ### Program:
+```
+def Palindrome(string): 
+    for i in range(0, int(len(string)/2)): 
+        if string[i] != string[len(string)-i-1]: 
+            return False 
+    return True 
 
-```py
-def binary_search(arr, x):
-    low = 0
-    high = len(arr) - 1
+# Take input from the user
+s = input("Enter a string: ") 
 
-    while low <= high:
-        mid = (high + low) // 2
-        
-        # Check if x is present at mid
-        if arr[mid] < x:
-            low = mid + 1
-        elif arr[mid] > x:
-            high = mid - 1
-        else:
-            return mid  # Return the index of the element if found
+# Check if the input contains only alphabetic characters
+c = 1 
+for i in s: 
+    if not i.isalpha(): 
+        c = 0 
+        break # No need to continue checking if we found a non-alphabetic character
+
+if c == 0: 
+    print("Enter a valid string") 
+else: 
+    # Convert the string to lowercase to handle case-insensitivity
+    s = s.lower() 
+    answer = Palindrome(s) 
     
-    return -1  # Return -1 if the element is not found
-
-arr = [2, 3, 4, 10, 40]
-x = input("Enter the element to be searched: ")
-
-try:
-    x = int(x)
-    result = binary_search(arr, x)
-    if result != -1:
-        print("Element is present at index", str(result))
-    else:
-        print("Element is not present in array")
-except ValueError:
-    print("Enter a valid integer input!")
-
+    if answer: 
+        print("The given string is a palindrome") 
+    else: 
+        print("The given string is not a palindrome")
 ```
 
+
+
+
+
+
+
+
+
+
+
+
 ### Output:
-
-![WhatsApp Image 2024-10-01 at 13 26 03_cbf2c3b3](https://github.com/user-attachments/assets/8e87ec25-e091-44c4-8a48-a8548fc468a6)
-
+![Screenshot 2024-10-08 133840](https://github.com/user-attachments/assets/3c301118-f342-4c5c-bc00-fa400eb2560d)
 ### Result:
-Thus, the python program to check the number is Armstrong number or not implemented and the output is verified successfully.
-
-
+Thus, a program to check palindrome has been written and test cases have been written and verified successfully.
